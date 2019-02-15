@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--demo01  第一个spring程序-->
+    <!--配置完后UserService的创建权就交由spring————控制反转-->
+    <!--<bean id="userService" class="com.ocaco.ioc.demo01.UserServiceImpl">-->
+        <!--&lt;!&ndash;设置属性————依赖注入&ndash;&gt;-->
+        <!--<property name="name" value="李四"></property>-->
+
+    <!--</bean>-->
+    <!--demo02  课后练习-->
+    <!--<bean id="foodClass" class="com.ocaco.ioc.demo02.Food">-->
+        <!--<property name="name" value="辣条"></property>-->
+        <!--<property name="taste" value="辣"></property>-->
+        <!--<property name="kind" value="面食"></property>-->
+    <!--</bean>-->
+
+    <!--demo03  spring实例化对象的三种方式 -->
+    <!--使用类构造器实例化-->
+    <!--<bean id="bean1" class="com.ocaco.ioc.demo03.Bean1" scope="prototype"></bean>-->
+
+    <!--使用静态工厂类实例化-->
+    <!--<bean id="bean2" class="com.ocaco.ioc.demo03.Bean2Factory" factory-method="getBean2"></bean>-->
+
+    <!--使用实例化工厂的方法实例化对象-->
+    <!--<bean id="bean3Factory" class="com.ocaco.ioc.demo03.Bean3Factory"></bean>-->
+    <!--<bean id="bean3" factory-bean="bean3Factory" factory-method="getBean3"></bean>-->
+
+    <!--demo04  spring生命周期的配置与具体的十一个生命周期状态-->
+    <!--<bean id="bean4" class="com.ocaco.ioc.demo04.Bean4" init-method="init" destroy-method="closeBean">
+        <property name="name" value="张三"></property>
+    </bean>-->
+    <!--<bean class="com.ocaco.ioc.demo04.MyBeanPostProcessor"></bean>-->
+
+    <!--demo05  实现BeanPostProcessor来增强实例对象-->
+    <bean id="userDao" class="com.ocaco.ioc.demo05.UserDaoImpl"></bean>
+    <bean class="com.ocaco.ioc.demo05.MyBeanPostProcessor"></bean>
+
+</beans>
